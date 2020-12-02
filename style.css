@@ -5,38 +5,38 @@
 }
 
 body {
+  position: relative;
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: hsl(185, 75%, 39%);
-  background-image: url('./images/bg-pattern-top.svg'),
-   url('./images/bg-pattern-bottom.svg');
-  background-position: top -45% left -100%, bottom -45% right -100%;
-  background-repeat: no-repeat;
-  background-size: 78%;
   font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  max-width: 1440px;
 }
 
-
 .card {
-  position: relative;
-  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90vw;
-  height: 60vh; 
-
+  height: 45vh; 
+  max-width: 800px;
+  z-index: 2;
 }
 
 .card_header {
   position: relative;
   display: flex;
   flex-basis: 35%;
-  /* background-color: red; */
   width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -50,7 +50,7 @@ body {
   transform: translate(-50%, -50%);
   border: 6px solid #fff;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 3;
 
 }
 
@@ -70,15 +70,20 @@ body {
   /* flex-basis: 80%; */
   margin: 0 auto;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
+.main_info span {
+  color: hsl(0, 0%, 59%)
+}
+
 .main_info strong {
   font-size: 22px;
   display: inline-block;
+  padding: 0 10px 10px 0;
 }
 
 
@@ -93,5 +98,73 @@ text-align: center;
 
 .info strong {
   display: block;
+  padding-bottom: 10px;
+}
 
+.info span {
+  color: hsl(0, 0%, 59%);
+}
+
+.top-left {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.top-left img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.bottom-right {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-right img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  transform: translate(50%, 50%) scale(1.2);
+}
+
+@media (min-width: 1440px) {
+  .card {
+    width: 40vw;
+    height: 40vw; 
+  }
+  
+  
+  .top-left {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .top-left img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(1.0);
+  }
+  
+  .bottom-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bottom-right img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    transform: translate(50%, 50%) scale(1.0);
+  }
 }
